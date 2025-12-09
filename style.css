@@ -276,21 +276,11 @@ body.loaded #preloader {
   display: none;
 }
 
-/* Load more */
-.load-more {
-  margin-top: 30px;
-  padding: 10px 20px;
-  border: 2px solid #1e88e5;
-  background: none;
-  color: #1e88e5;
-  font-weight: 600;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.load-more:hover {
-  background: #1e88e5;
-  color: #fff;
+.section-divider {
+  width: 90%;
+  height: 1px;
+  margin: 120px auto 5px;
+  background: linear-gradient(to right, transparent, #222, transparent);
 }
 
 /* === ABOUT SECTION === */
@@ -530,6 +520,23 @@ body.menu-open {
   padding-top: 20px;
   font-size: 0.85rem;
   color: #999;
+}
+
+.social-icons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center; /* center horizontally */
+  gap: 15px;
+}
+
+.social-icons a {
+  color: #ccc;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #eb4431;
 }
 
 /* Responsive Footer */

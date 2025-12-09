@@ -9,9 +9,10 @@ function createMobileMenu() {
     mobileMenu.className = "mobile-menu";
     mobileMenu.innerHTML = `
       <a href="#top">Home</a>
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="projects.html">Projects</a>
+      <a href="index.html#about">About</a>
+      <a href="#services">Our Services</a>
+      <a href="#contact">Contact Us</a>
     `;
     document.body.appendChild(mobileMenu);
   }

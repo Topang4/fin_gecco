@@ -71,25 +71,6 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// // === LOAD MORE BUTTONS ===
-// const loadProjects = document.getElementById("loadProjects");
-
-// function toggleGrid(button, sectionName) {
-//   const grid = button.previousElementSibling;
-//   grid.classList.toggle("expanded");
-//   if (grid.classList.contains("expanded")) {
-//     button.textContent = "Show Less";
-//   } else {
-//     button.textContent = `Load More ${sectionName}`;
-//     grid.scrollIntoView({ behavior: "smooth", block: "start" });
-//   }
-// }
-
-// if (loadProjects)
-//   loadProjects.addEventListener("click", () =>
-//     toggleGrid(loadProjects, "Projects")
-//   );
-
 // === LIGHTBOX WITH MULTI-IMAGE GROUPS ===
 const images = document.querySelectorAll(".image-card img");
 const lightbox = document.createElement("div");

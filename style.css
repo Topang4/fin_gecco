@@ -546,3 +546,16 @@ body.menu-open {
     gap: 30px;
   }
 }
+
+/* --- other styles above --- */
+
+body {
+  opacity: 0;
+  animation: fadeInPage 0.7s ease forwards;
+}
+
+@keyframes fadeInPage {
+  to {
+    opacity: 1;
+  }
+}

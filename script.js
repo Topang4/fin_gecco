@@ -18,15 +18,6 @@ function createMobileMenu() {
   }
 }
 
-window.addEventListener("load", () => {
-  document.body.classList.add("loaded");
-  // Remove from DOM after fade-out
-  setTimeout(() => {
-    const preloader = document.getElementById("preloader");
-    if (preloader) preloader.remove();
-  }, 700); // match CSS transition
-});
-
 function toggleOverlay(show) {
   if (!overlay) {
     overlay = document.createElement("div");
@@ -165,3 +156,71 @@ const cards = document.querySelectorAll(".image-card");
 cards.forEach((card, i) => {
   setTimeout(() => card.classList.add("visible"), i * 120);
 });
+
+/* =========================
+   Back to Top Button
+========================= */
+
+const backToTopBtn = document.getElementById("backToTop");
+
+if (backToTopBtn) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add("show");
+    } else {
+      backToTopBtn.classList.remove("show");
+    }
+  });
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+}
+
+/* =========================
+   Back to Top – Footer Detection
+========================= */
+
+const footer = document.querySelector("footer");
+
+if (footer && backToTopBtn) {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        backToTopBtn.classList.add("footer-contrast");
+      } else {
+        backToTopBtn.classList.remove("footer-contrast");
+      }
+    },
+    {
+      root: null,
+      threshold: 0.1,
+    }
+  );
+
+  observer.observe(footer);
+}
+
+/* =========================
+   Preloader Control (Timed)
+========================= */
+
+const preloader = document.getElementById("preloader");
+const isProjectsPage = document.body.classList.contains("projects-page");
+
+// Shorter loader for projects page
+const loaderTime = isProjectsPage ? 900 : 1500;
+
+if (preloader) {
+  setTimeout(() => {
+    preloader.classList.add("hide");
+
+    // Remove from DOM after fade-out
+    setTimeout(() => {
+      preloader.remove();
+    }, 600); // must match CSS transition
+  }, loaderTime);
+}

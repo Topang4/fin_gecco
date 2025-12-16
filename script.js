@@ -7,13 +7,29 @@ function createMobileMenu() {
   if (!mobileMenu) {
     mobileMenu = document.createElement("div");
     mobileMenu.className = "mobile-menu";
-    mobileMenu.innerHTML = `
-      <a href="index.html#top">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#services">Our Services</a>
-      <a href="#contact">Contact Us</a>
-    `;
+
+    // Detect if we're on projects page
+    const isProjectsPage = document.body.classList.contains("projects-page");
+
+    if (isProjectsPage) {
+      mobileMenu.innerHTML = `
+        <a href="index.html#top">Home</a>
+        <a href="#top">Projects</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#services">Our Services</a>
+        <a href="#contact">Contact Us</a>
+      `;
+    } else {
+      // For index.html or other pages
+      mobileMenu.innerHTML = `
+        <a href="#top">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="#about">About</a>
+        <a href="#services">Our Services</a>
+        <a href="#contact">Contact Us</a>
+      `;
+    }
+
     document.body.appendChild(mobileMenu);
   }
 }

@@ -11,7 +11,7 @@ function createMobileMenu() {
       <a href="index.html#top">Home</a>
       <a href="projects.html">Projects</a>
       <a href="index.html#about">About</a>
-      <a href="#services">Our Services</a>
+      <a href="index.html#services">Our Services</a>
       <a href="#contact">Contact Us</a>
     `;
     document.body.appendChild(mobileMenu);

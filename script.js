@@ -8,7 +8,7 @@ function createMobileMenu() {
     mobileMenu = document.createElement("div");
     mobileMenu.className = "mobile-menu";
     mobileMenu.innerHTML = `
-      <a href="#top">Home</a>
+      <a href="index.html#top">Home</a>
       <a href="projects.html">Projects</a>
       <a href="index.html#about">About</a>
       <a href="#services">Our Services</a>
